@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+                 x:Class="PopupPickerTest.Views.PopupWithPickerPage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout VerticalOptions="Center" 
+                 HorizontalOptions="Center" 
+                 BackgroundColor="White" 
+                 Padding="15"
+                 WidthRequest="150">
+        <Picker ItemsSource="{Binding ItemList}"
+                SelectedIndex="0"/>
+        <Button Text="ClosePopup" Command="{Binding ClosePopupCommand}"/>
+    </StackLayout>
+    
+</pages:PopupPage>
